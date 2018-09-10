@@ -1,0 +1,370 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <? if (feed.author) { ?>
+    <author
+      <? if (feed.author['xml:base']) { ?>
+        xml:base="<?= feed.author['xml:base'] ?>"
+      <? } ?>
+      <? if (feed.author['xml:lang']) { ?>
+        xml:lang="<?= feed.author['xml:lang'] ?>"
+      <? } ?>
+    >
+      <? if (feed.author.name) { ?>
+        <name><?= feed.author.name ?></name>
+      <? } ?>
+      <? if (feed.author.uri) { ?>
+        <uri><?= feed.author.uri ?></uri>
+      <? } ?>
+      <? if (feed.author.email) { ?>
+        <email><?= feed.author.email ?></email>
+      <? } ?>
+  </author>
+  <? } ?>
+  <? if (feed.category) { for (var i = 0; i < feed.category.length; i++) { ?>
+    <category
+      <? if (feed.category[i]['xml:base']) { ?>
+        xml:base="<?= feed.category[i]['xml:base'] ?>"
+      <? } ?>
+      <? if (feed.category[i]['xml:lang']) { ?>
+        xml:lang="<?= feed.category[i]['xml:lang'] ?>"
+      <? } ?>
+      <? if (feed.category[i].term) { ?>
+        term="<?= feed.category[i].term ?>"
+      <? } ?>
+      <? if (feed.category[i].schema) { ?>
+        schema="<?= feed.category[i].schema ?>"
+      <? } ?>
+      <? if (feed.category[i].label) { ?>
+        label="<?= feed.category[i].label ?>"
+      <? } ?>
+    />
+  <? }} ?>
+  <? if (feed.contributor) { for (var i = 0; i < feed.contributor.length; i++) { ?>
+    <contributor
+      <? if (feed.contributor[i]['xml:base']) { ?>
+        xml:base="<?= feed.contributor[i]['xml:base'] ?>"
+      <? } ?>
+      <? if (feed.contributor[i]['xml:lang']) { ?>
+         xml:lang="<?= feed.contributor[i]['xml:lang'] ?>"
+      <? } ?>
+    >
+      <? if (feed.contributor[i].name) { ?>
+        <name><?= feed.contributor[i].name ?></name>
+      <? } ?>
+      <? if (feed.contributor[i].uri) { ?>
+        <uri><?= feed.contributor[i].uri ?></uri>
+      <? } ?>
+      <? if (feed.contributor[i].email) { ?>
+        <email><?= feed.contributor[i].email ?></email>
+      <? } ?>
+    </contributor>
+  <? }} ?>
+  <? if (feed.generator) { ?>
+    <generator
+      <? if (feed.generator['xml:base']) { ?>
+        xml:base="<?= feed.generator['xml:base'] ?>"
+      <? } ?>
+      <? if (feed.generator['xml:lang']) { ?>
+        xml:lang="<?= feed.generator['xml:lang'] ?>"
+      <? } ?>
+      <? if (feed.generator.uri) { ?>
+        uri="<?= feed.generator.uri ?>"
+      <? } ?>
+      <? if (feed.generator.version) { ?>
+        version="<?= feed.generator.version ?>"
+      <? } ?>
+    ><? if (feed.generator.text) { ?><?= feed.generator.text ?><? } ?></generator>
+  <? } ?>
+  <? if (feed.icon) { ?>
+    <icon
+      <? if (feed.icon['xml:base']) { ?>
+        xml:base="<?= feed.icon['xml:base'] ?>"
+      <? } ?>
+      <? if (feed.icon['xml:lang']) { ?>
+        xml:lang="<?= feed.icon['xml:lang'] ?>"
+      <? } ?>
+    ><? if (feed.icon.uri) { ?><?= feed.icon.uri ?><? } ?></icon>
+  <? } ?>
+  <? if (feed.id) { ?>
+    <id
+      <? if (feed.id['xml:base']) { ?>
+        xml:base="<?= feed.id['xml:base'] ?>"
+      <? } ?>
+      <? if (feed.id['xml:lang']) { ?>
+        xml:lang="<?= feed.id['xml:lang'] ?>"
+      <? } ?>
+    ><? if (feed.id.uri) { ?><?= feed.id.uri ?><? } ?></id>
+  <? } ?>
+  <? if (feed.link) { for (var i = 0; i < feed.link.length; i++) {?>
+    <link
+      <? if (feed.link[i]['xml:base']) { ?>
+        xml:base="<?= feed.link[i]['xml:base'] ?>"
+      <? } ?>
+      <? if (feed.link[i]['xml:lang']) { ?>
+        xml:lang="<?= feed.link[i]['xml:lang'] ?>"
+      <? } ?>
+      <? if (feed.link[i].href) { ?>
+        href="<?= feed.link[i].href ?>"
+      <? } ?>
+      <? if (feed.link[i].rel) { ?>
+        rel="<?= feed.link[i].rel ?>"
+      <? } ?>
+      <? if (feed.link[i].type) { ?>
+        type="<?= feed.link[i].type ?>"
+      <? } ?>
+      <? if (feed.link[i].hreflang) { ?>
+        hreflang="<?= feed.link[i].hreflang ?>"
+      <? } ?>
+      <? if (feed.link[i].title) { ?>
+        title="<?= feed.link[i].title ?>"
+      <? } ?>
+      <? if (feed.link[i].length) { ?>
+        length="<?= feed.link[i].length ?>"
+      <? } ?>
+    />
+  <? }} ?>
+  <? if (feed.logo) { ?>
+    <logo
+      <? if (feed.logo['xml:base']) { ?>
+        xml:base="<?= feed.logo['xml:base'] ?>"
+      <? } ?>
+      <? if (feed.logo['xml:lang']) { ?>
+        xml:lang="<?= feed.logo['xml:lang'] ?>"
+      <? } ?>
+    ><? if (feed.logo.uri) { ?><?= feed.logo.uri ?><? } ?></logo>
+  <? } ?>
+  <? if (feed.published) { ?>
+    <published
+      <? if (feed.published['xml:base']) { ?>
+        xml:base="<?= feed.published['xml:base'] ?>"
+      <? } ?>
+      <? if (feed.published['xml:lang']) { ?>
+        xml:lang="<?= feed.published['xml:lang'] ?>"
+      <? } ?>
+    ><? if (feed.published.dateTime) { ?><?= feed.published.dateTime.toISOString() ?><? } ?></published>
+  <? } ?>
+  <? if (feed.rights) { ?>
+    <rights
+      <? if (feed.rights['xml:base']) { ?>
+        xml:base="<?= feed.rights['xml:base'] ?>"
+      <? } ?>
+      <? if (feed.rights['xml:lang']) { ?>
+        xml:lang="<?= feed.rights['xml:lang'] ?>"
+      <? } ?>
+    ><? if (feed.rights.text) { ?><?= feed.rights.text ?><? } ?></rights>
+  <? } ?>
+  <? if (feed.subtitle) { ?>
+    <subtitle
+      <? if (feed.subtitle['xml:base']) { ?>
+        xml:base="<?= feed.subtitle['xml:base'] ?>"
+      <? } ?>
+      <? if (feed.subtitle['xml:lang']) { ?>
+        xml:lang="<?= feed.subtitle['xml:lang'] ?>"
+      <? } ?>
+    ><? if (feed.subtitle.text) { ?><?= feed.subtitle.text ?><? } ?></subtitle>
+  <? } ?>
+  <? if (feed.summary) { ?>
+    <summary
+      <? if (feed.summary['xml:base']) { ?>
+        xml:base="<?= feed.summary['xml:base'] ?>"
+      <? } ?>
+      <? if (feed.summary['xml:lang']) { ?>
+        xml:lang="<?= feed.summary['xml:lang'] ?>"
+      <? } ?>
+    ><? if (feed.summary.text) { ?><?= feed.summary.text ?><? } ?></summary>
+  <? } ?>
+  <? if (feed.title) { ?>
+    <title
+      <? if (feed.title['xml:base']) { ?>
+        xml:base="<?= feed.title['xml:base'] ?>"
+      <? } ?>
+      <? if (feed.title['xml:lang']) { ?>
+        xml:lang="<?= feed.title['xml:lang'] ?>"
+      <? } ?>
+    ><? if (feed.title.text) { ?><?= feed.title.text ?><? } ?></title>
+  <? } ?>
+  <? if (feed.updated) { ?>
+    <updated
+      <? if (feed.updated['xml:base']) { ?>
+        xml:base="<?= feed.updated['xml:base'] ?>"
+      <? } ?>
+      <? if (feed.updated['xml:lang']) { ?>
+        xml:lang="<?= feed.updated['xml:lang'] ?>"
+      <? } ?>
+    ><? if (feed.updated.dateTime) { ?><?= feed.updated.dateTime.toISOString() ?><? } ?></updated>
+  <? } ?>
+  <? if (feed.entry) { for (var i = 0; i < feed.entry.length; i++) { ?>
+    <entry
+      <? if (feed.entry[i]['xml:base']) { ?>
+        xml:base="<?= feed.entry[i]['xml:base'] ?>"
+      <? } ?>
+      <? if (feed.entry[i]['xml:lang']) { ?>
+         xml:lang="<?= feed.entry[i]['xml:lang'] ?>"
+      <? } ?>
+    >
+      <? if (feed.entry[i].author) { ?>
+        <author
+          <? if (feed.entry[i].author['xml:base']) { ?>
+              xml:base="<?= feed.entry[i].author['xml:base'] ?>"
+          <? } ?>
+          <? if (feed.entry[i].author['xml:lang']) { ?>
+              xml:lang="<?= feed.entry[i].author['xml:lang'] ?>"
+          <? } ?>
+          >
+          <? if (feed.entry[i].author.name) { ?>
+              <name><?= feed.entry[i].author.name ?></name>
+          <? } ?>
+          <? if (feed.entry[i].author.uri) { ?>
+              <uri><?= feed.entry[i].author.uri ?></uri>
+          <? } ?>
+          <? if (feed.entry[i].author.email) { ?>
+              <email><?= feed.entry[i].author.email ?></email>
+          <? } ?>
+        </author>
+      <? } ?>
+      <? if (feed.entry[i].category) { for (var j = 0; j < feed.entry[i].category.length; j++) { ?>
+        <category
+          <? if (feed.entry[i].category[j]['xml:base']) { ?>
+            xml:base="<?= feed.entry[i].category[j]['xml:base'] ?>"
+          <? } ?>
+          <? if (feed.entry[i].category[j]['xml:lang']) { ?>
+            xml:lang="<?= feed.entry[i].category[j]['xml:lang'] ?>"
+          <? } ?>
+          <? if (feed.entry[i].category[j].term) { ?>
+            term="<?= feed.entry[i].category[j].term ?>"
+          <? } ?>
+          <? if (feed.entry[i].category[j].schema) { ?>
+            schema="<?= feed.entry[i].category[j].schema ?>"
+          <? } ?>
+          <? if (feed.entry[i].category[j].label) { ?>
+            label="<?= feed.entry[i].category[j].label ?>"
+          <? } ?>
+        />
+      <? }} ?>
+      <? if (feed.entry[i].content) { ?>
+        <content
+          <? if (feed.entry[i].content['xml:base']) { ?>
+            xml:base="<?= feed.entry[i].content['xml:base'] ?>"
+          <? } ?>
+          <? if (feed.entry[i].content['xml:lang']) { ?>
+            xml:lang="<?= feed.entry[i].content['xml:lang'] ?>"
+          <? } ?>
+          <? if (feed.entry[i].content.type) { ?>
+            type="<?= feed.entry[i].content.type ?>"
+          <? } ?>
+          <? if (feed.entry[i].content.src) { ?>
+            src="<?= feed.entry[i].content.src ?>"
+          <? } ?>
+        ><? if (feed.entry[i].content.text) { ?><?= feed.entry[i].content.text ?><? } ?><? if (feed.entry[i].content.xhtmlDiv) { ?><?= feed.entry[i].content.xhtmlDiv ?><? } ?><? if (feed.entry[i].content.element) { ?><?= feed.entry[i].content.element ?><? } ?>
+        </content>
+      <? } ?>
+      <? if (feed.entry[i].contributor) { for (var j = 0; j < feed.entry[i].contributor.length; j++) { ?>
+        <contributor
+          <? if (feed.entry[i].contributor[j]['xml:base']) { ?>
+            xml:base="<?= feed.entry[i].contributor[j]['xml:base'] ?>"
+          <? } ?>
+          <? if (feed.entry[i].contributor[j]['xml:lang']) { ?>
+             xml:lang="<?= feed.entry[i].contributor[j]['xml:lang'] ?>"
+          <? } ?>
+        >
+          <? if (feed.entry[i].contributor[j].name) { ?>
+            <name><?= feed.entry[i].contributor[j].name ?></name>
+          <? } ?>
+          <? if (feed.entry[i].contributor[j].uri) { ?>
+            <uri><?= feed.entry[i].contributor[j].uri ?></uri>
+          <? } ?>
+          <? if (feed.entry[i].contributor[j].email) { ?>
+            <email><?= feed.entry[i].contributor[j].email ?></email>
+          <? } ?>
+        </contributor>
+      <? }} ?>
+      <? if (feed.entry[i].id) { ?>
+        <id
+          <? if (feed.entry[i].id['xml:base']) { ?>
+            xml:base="<?= feed.entry[i].id['xml:base'] ?>"
+          <? } ?>
+          <? if (feed.entry[i].id['xml:lang']) { ?>
+            xml:lang="<?= feed.entry[i].id['xml:lang'] ?>"
+          <? } ?>
+        ><? if (feed.entry[i].id.uri) { ?><?= feed.entry[i].id.uri ?><? } ?></id>
+      <? } ?>
+      <? if (feed.entry[i].link) { for (var j = 0; j < feed.entry[i].link.length; j++) {?>
+        <link
+          <? if (feed.entry[i].link[j]['xml:base']) { ?>
+            xml:base="<?= feed.entry[i].link[j]['xml:base'] ?>"
+          <? } ?>
+          <? if (feed.entry[i].link[j]['xml:lang']) { ?>
+            xml:lang="<?= feed.entry[i].link[j]['xml:lang'] ?>"
+          <? } ?>
+          <? if (feed.entry[i].link[j].href) { ?>
+            href="<?= feed.entry[i].link[j].href ?>"
+          <? } ?>
+          <? if (feed.entry[i].link[j].rel) { ?>
+            rel="<?= feed.entry[i].link[j].rel ?>"
+          <? } ?>
+          <? if (feed.entry[i].link[j].type) { ?>
+            type="<?= feed.entry[i].link[j].type ?>"
+          <? } ?>
+          <? if (feed.entry[i].link[j].hreflang) { ?>
+            hreflang="<?= feed.entry[i].link[j].hreflang ?>"
+          <? } ?>
+          <? if (feed.entry[i].link[j].title) { ?>
+            title="<?= feed.entry[i].link[j].title ?>"
+          <? } ?>
+          <? if (feed.entry[i].link[j].length) { ?>
+            length="<?= feed.entry[i].link[j].length ?>"
+          <? } ?>
+        />
+      <? }} ?>
+      <? if (feed.entry[i].published) { ?>
+        <published
+          <? if (feed.entry[i].published['xml:base']) { ?>
+            xml:base="<?= feed.entry[i].published['xml:base'] ?>"
+          <? } ?>
+          <? if (feed.entry[i].published['xml:lang']) { ?>
+            xml:lang="<?= feed.entry[i].published['xml:lang'] ?>"
+          <? } ?>
+        ><? if (feed.entry[i].published.dateTime) { ?><?= feed.entry[i].published.dateTime.toISOString() ?><? } ?></published>
+      <? } ?>
+      <? if (feed.entry[i].rights) { ?>
+        <rights
+          <? if (feed.entry[i].rights['xml:base']) { ?>
+            xml:base="<?= feed.entry[i].rights['xml:base'] ?>"
+          <? } ?>
+          <? if (feed.entry[i].rights['xml:lang']) { ?>
+            xml:lang="<?= feed.entry[i].rights['xml:lang'] ?>"
+          <? } ?>
+        ><? if (feed.entry[i].rights.text) { ?><?= feed.entry[i].rights.text ?><? } ?></rights>
+      <? } ?>
+      <? if (feed.entry[i].summary) { ?>
+        <summary
+          <? if (feed.entry[i].summary['xml:base']) { ?>
+            xml:base="<?= feed.entry[i].summary['xml:base'] ?>"
+          <? } ?>
+          <? if (feed.entry[i].summary['xml:lang']) { ?>
+            xml:lang="<?= feed.entry[i].summary['xml:lang'] ?>"
+          <? } ?>
+        ><? if (feed.entry[i].summary.text) { ?><?= feed.entry[i].summary.text ?><? } ?></summary>
+      <? } ?>
+      <? if (feed.entry[i].title) { ?>
+        <title
+          <? if (feed.entry[i].title['xml:base']) { ?>
+            xml:base="<?= feed.entry[i].title['xml:base'] ?>"
+          <? } ?>
+          <? if (feed.entry[i].title['xml:lang']) { ?>
+            xml:lang="<?= feed.entry[i].title['xml:lang'] ?>"
+          <? } ?>
+        ><? if (feed.entry[i].title.text) { ?><?= feed.entry[i].title.text ?><? } ?></title>
+      <? } ?>
+      <? if (feed.entry[i].updated) { ?>
+        <updated
+          <? if (feed.entry[i].updated['xml:base']) { ?>
+            xml:base="<?= feed.entry[i].updated['xml:base'] ?>"
+          <? } ?>
+          <? if (feed.entry[i].updated['xml:lang']) { ?>
+            xml:lang="<?= feed.entry[i].updated['xml:lang'] ?>"
+          <? } ?>
+        ><? if (feed.entry[i].updated.dateTime) { ?><?= feed.entry[i].updated.dateTime.toISOString() ?><? } ?></updated>
+      <? } ?>
+    </entry>
+  <? }} ?>
+</feed>
