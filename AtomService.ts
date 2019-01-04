@@ -264,7 +264,7 @@ export function isMarshalable(feedObject: any): void {
    * @param target
    * @param varArgs
    */
-  function assign(target: any, varArgs: any): any {
+  function assign(target: any, _varArgs: any): any {
     // .length of function is 2
     const to = Object(target);
     for (let index = 1; index < arguments.length; index++) {

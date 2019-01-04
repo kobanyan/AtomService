@@ -8,6 +8,7 @@
   },
   "rules": {
     "array-type": [true, "array"],
-    "interface-name": false
+    "interface-name": false,
+    "variable-name": [true, "allow-leading-underscore"]
   }
 }
